@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
-}
+:root {
+  /* Viewport Sizes */
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  /* Colors */
+  /* Primary */
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(180deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  /* Neutral */
+  /* Light Theme */
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue: hsl(233, 11%, 84%);
+  --dark-grayish-blue: hsl(236, 9%, 61%);
+  --very-dark-grayish-blue: hsl(235, 19%, 35%);
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  /* Dark Theme */
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+  --light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --very-dark-grayish-blue: hsl(233, 14%, 35%);
+  --very-dark-grayish-blue: hsl(237, 14%, 26%);
 
-.App-link {
-  color: #61dafb;
-}
+  /* Typography */
+  /* Body Copy */
+  --font-size-body-copy: 18px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  /* Fonts */
+  --font-family: 'Josefin Sans', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
 }
