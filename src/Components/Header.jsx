@@ -1,4 +1,5 @@
 import React from "react";
+import iconMoon from '../icon-moon.svg';
 
 export default function Header () {
     return (

@@ -33,6 +33,8 @@
   --font-family: 'Josefin Sans', sans-serif;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
+
+  --classic-radius: 0.3rem;
 }
 
 * {
@@ -55,6 +57,23 @@ body {
   background-color: var(--very-light-gray);
 }
 
+p {
+  font-size: var(--font-size-body-copy);
+  color: var(--dark-grayish-blue);
+  font-size: 14px;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
 .container {
   width: 100%;
   max-width: var(--mobile-width);
@@ -63,9 +82,16 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url('./bg-mobile-light.jpg');
+  background-image: url(/src/bg-mobile-light.jpg);
   background-size: cover;
   background-attachment: fixed;
+}
+
+.bg-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .header {
@@ -82,8 +108,85 @@ body {
 
 .input-block {
   width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
 }
 
 .input-todo {
   width: 100%;
+  padding: 1rem 3.5rem;
+  border-radius: var(--classic-radius);
+}
+
+.circle-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid var(--light-grayish-blue);
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.todo-list {
+  background-color: var(--very-light-gray);
+  border-radius: var(--classic-radius);
+  margin-bottom: 1rem;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 1rem 3.5rem;
+  position: relative;
+  border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+.todo-item-text {
+  color: var(--very-dark-grayish-blue);
+}
+
+.todo-stats {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.todo-stats button {
+  background-color: transparent;
+  color: var(--dark-grayish-blue);
+}
+
+
+
+
+.choose-category-todos {
+  background-color: var(--very-light-gray);
+  border-radius: var(--classic-radius);
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.choose-category-todos button {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--dark-grayish-blue);
+}
+
+
+
+.footer {
+  text-align: center;
+}
+
+.footer h2 {
+  font-size: 14px;
+  color: var(--dark-grayish-blue);
 }
