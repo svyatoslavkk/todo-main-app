@@ -1,7 +1,13 @@
 import React from "react";
 import iconCross from '../icon-cross.svg';
 
-export default function TodoList ({ darkMode }) {
+export default function TodoList ({
+    darkMode,
+    tasks,
+    toggleTaskStatus,
+    deleteTask,
+    clearCompletedTasks,
+  }) {
 
     const todoListStyle = {
       backgroundColor: darkMode ? 'hsl(235, 24%, 19%)' : 'hsl(0, 0%, 98%)',
@@ -10,34 +16,21 @@ export default function TodoList ({ darkMode }) {
 
     return (
         <main className='todo-list' style={todoListStyle}>
-            <div className='todo-item'>
-                <div className='circle-icon'></div>
-                <p className='todo-item-text'>Go to bed</p>
-                <img className='icon-cross' src={iconCross} alt="Icon Cross" />
-            </div>
-            <div className='todo-item'>
-                <div className='circle-icon'></div>
-                <p className='todo-item-text'>Go to bed</p>
-                <img className='icon-cross' src={iconCross} alt="Icon Cross" />
-            </div>
-            <div className='todo-item'>
-                <div className='circle-icon'></div>
-                <p className='todo-item-text'>Go to bed</p>
-                <img className='icon-cross' src={iconCross} alt="Icon Cross" />
-            </div>
-            <div className='todo-item'>
-                <div className='circle-icon'></div>
-                <p className='todo-item-text'>Go to bed</p>
-                <img className='icon-cross' src={iconCross} alt="Icon Cross" />
-            </div>
-            <div className='todo-item'>
-                <div className='circle-icon'></div>
-                <p className='todo-item-text'>Go to bed</p>
-                <img className='icon-cross' src={iconCross} alt="Icon Cross" />
-            </div>
+            {tasks.map((task) => (
+                <div className={`todo-item ${task.completed ? "completed" : ""}`} key={task.id}>
+                    <div className='circle-icon' onClick={() => toggleTaskStatus(task.id)}></div>
+                    <p className='todo-item-text'>{task.text}</p>
+                    <img 
+                        className='icon-cross' 
+                        src={iconCross} 
+                        alt="Icon Cross" 
+                        onClick={() => deleteTask(task.id)}
+                    />
+                </div>
+            ))}
             <div className='todo-stats'>
-                <p className='items-left'>5 items left</p>
-                <button className='clear-completed' type="button">Clear Completed</button>
+                <p className='items-left'>{tasks.filter((task) => !task.completed).length} items left</p>
+                <button className='clear-completed' type="button" onClick={clearCompletedTasks}>Clear Completed</button>
             </div>
         </main>
     )
