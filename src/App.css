@@ -145,7 +145,6 @@ button {
   left: 20px;
   transform: translateY(-50%);
   cursor: pointer;
-  cursor: pointer;
   transition: 0.1s ease;
 }
 
@@ -153,6 +152,20 @@ button {
 .circle-icon:active,
 .circle-icon:focus {
   border: 1px solid var(--bright-blue);
+}
+
+.icon-check {
+  width: 20px;
+  height: 20px;
+  background: var(--check-background);
+  border-radius: 50%;
+  padding: 0.3rem;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: 0.1s ease;
 }
 
 
@@ -175,6 +188,11 @@ button {
 
 .todo-item-text {
   font-size: 12px;
+}
+
+.todo-item-text.completed-text {
+  text-decoration: line-through;
+  color: var(--dark-grayish-blue);
 }
 
 .icon-cross {

@@ -1,5 +1,6 @@
 import React from "react";
 import iconCross from '../icon-cross.svg';
+import iconCheck from '../icon-check.svg';
 
 export default function TodoList ({
     darkMode,
@@ -18,8 +19,17 @@ export default function TodoList ({
         <main className='todo-list' style={todoListStyle}>
             {tasks.map((task) => (
                 <div className={`todo-item ${task.completed ? "completed" : ""}`} key={task.id}>
-                    <div className='circle-icon' onClick={() => toggleTaskStatus(task.id)}></div>
-                    <p className='todo-item-text'>{task.text}</p>
+                    {task.completed ? (
+                        <img
+                        className='icon-check'
+                        src={iconCheck}
+                        alt='Icon Check'
+                        onClick={() => toggleTaskStatus(task.id)}
+                        />
+                    ) : (
+                        <div className='circle-icon' onClick={() => toggleTaskStatus(task.id)}></div>
+                    )}
+                        <p className={`todo-item-text ${task.completed ? "completed-text" : ""}`}>{task.text}</p>
                     <img 
                         className='icon-cross' 
                         src={iconCross} 
